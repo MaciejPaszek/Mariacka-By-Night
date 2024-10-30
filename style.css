@@ -1,0 +1,81 @@
+* {
+  box-sizing: border-box;
+}
+
+body{
+	background-image:	linear-gradient(
+						#00113C, 
+						#8392B3,
+						#FE9A28);
+	font-family:		Arial;
+	font-size:			14pt;
+	background-color:	rgb(0,0,50);
+	color:				rgb(255,255,255);
+}
+
+h1{
+	font-family:		Times New Roman;
+	font-size:			50pt;
+	text-align:			center;
+	padding:			40pt 0pt 40pt 0pt;	
+}
+
+h2{
+	font-size:			30pt;
+	padding:			100pt 50pt 10pt 50pt;
+}
+
+a{
+	color:				#FFFFFF;
+}
+
+footer{
+	text-align:			left;
+}
+
+.navigator{
+	background-color: rgb(255,255,255,50%);
+	padding: 30pt 50pt 30pt 50pt;
+	float: left;
+}
+
+#photo{
+	float:				right;
+	width:				50%;
+	max-width:			500px;
+	height: 			auto;
+}
+
+#navbar{
+	background-color: rgb(255,255,255,50%);
+}
+
+#content{
+	padding: 10pt;
+}
+
+#list {
+	float: left;
+	width: 20%;
+}
+
+#map {
+	float: left;
+	width: 40%;
+}
+
+#register {
+	float: left;
+	width: 20%;
+}
+
+#login {
+	float: left;
+	width: 20%;
+}
+
+@media screen and (max-width: 800px) {
+  #list, #map, #register, #login {
+    width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+  }
+}
