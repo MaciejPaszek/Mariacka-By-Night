@@ -1,5 +1,5 @@
 * {
-  box-sizing: border-box;
+	box-sizing:		border-box;
 }
 
 body{
@@ -8,74 +8,123 @@ body{
 						#8392B3,
 						#FE9A28);
 	font-family:		Arial;
-	font-size:			14pt;
+	font-size:			16pt;
 	background-color:	rgb(0,0,50);
 	color:				rgb(255,255,255);
+	margin:				0;
 }
 
-h1{
+#title{
 	font-family:		Times New Roman;
 	font-size:			50pt;
+	font-weight:		bold;
+	font-style:			italic;
 	text-align:			center;
-	padding:			40pt 0pt 40pt 0pt;	
+	padding:			40pt 0pt 40pt 0pt;
+	margin:				0;
 }
 
-h2{
-	font-size:			30pt;
-	padding:			100pt 50pt 10pt 50pt;
+.navigator{
+	background-color:	rgb(255,255,255,20%);
+	padding:			20pt 0pt 20pt 0pt;
+	text-align:			center;
+	font-weight:		bold;
+	float:				left;
+	width:				25%;
+}
+
+.navigator:hover{
+	background-color:	rgb(255,255,255,50%);
+}
+
+#content{
+	clear:				left;
+	padding:			30pt;
+}
+
+#photo{
+	float:				right;
+	width:				auto;
+	height:				100%;
+	max-width:			50%;
+}
+
+#infoSection{
+	
+}
+
+#descriptionSection{
+	clear:				right;
+}
+
+#commentSection{
+	
+}
+
+.commentBlock{
+	background-color:	rgb(255,255,255,20%);
+	padding:			10pt;
+	margin: 			5pt 0pt 5pt 0pt;
 }
 
 a{
 	color:				#FFFFFF;
 }
 
+p{
+	font-size:			16pt;
+}
+
+#barDesc{
+	text-align:			justify;
+}
+
 footer{
-	text-align:			left;
+	text-align:			center;
+	padding:			10pt;
+	margin-top:			30pt;
 }
 
-.navigator{
-	background-color: rgb(255,255,255,50%);
-	padding: 30pt 50pt 30pt 50pt;
-	float: left;
+.comment{
+	background-color:	rgb(255,255,255,20%);
+	padding:			10pt 10pt 10pt 10pt;
+	margin: 			5pt 0pt 5pt 0pt;
 }
 
-#photo{
-	float:				right;
-	width:				50%;
-	max-width:			500px;
-	height: 			auto;
+textarea{
+	background-color:	rgb(255,255,255,0%);
+	color:				white;
+	font-family:		Arial;
+	font-size:			16pt;
+	width:				100%;
+	padding:			5pt;
+	resize:				none;
 }
 
-#navbar{
-	background-color: rgb(255,255,255,50%);
-}
-
-#content{
-	padding: 10pt;
-}
-
-#list {
-	float: left;
-	width: 20%;
-}
-
-#map {
-	float: left;
-	width: 40%;
-}
-
-#register {
-	float: left;
-	width: 20%;
-}
-
-#login {
-	float: left;
-	width: 20%;
+#commentSend{
+	font-family:		Arial;
+	font-size:			16pt;
+	padding:			5pt;
+	
 }
 
 @media screen and (max-width: 800px) {
-  #list, #map, #register, #login {
-    width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
-  }
+	.navigator{
+		width: 100%;
+		
+	}
+  
+	#photo{
+		clear: left;
+		float:				center;
+		width:				100%;
+		max-width:			100%;
+		max-height:			auto;
+		height: 			auto;
+	}
+	
+	#content{
+	clear:				left;
+	padding:			30pt;
+}	
 }
