@@ -49,6 +49,11 @@ body{
 	max-width:			50%;
 }
 
+#mapimg{
+	width:				auto;
+	height:				auto;
+}
+
 #infoSection{
 	
 }
