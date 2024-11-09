@@ -12,18 +12,20 @@
 			Mariacka By Night
 		</p>
 		
-		<a href="index.html">
-			<div id="list" class="navigator">LIST</div>
-		</a>
-		<a href="map.html">
-			<div id="map" class="navigator">MAP</div>
-		</a>
-		<a href="login.html">
-			<div id="register" class="navigator">REGISTER</div>
-		</a>
-		<a href="login.html">
-			<div id="login" class="navigator">LOGIN</div>
-		</a>
+		<nav>
+			<a href="index.html">
+				<div id="list" class="navigator">LIST</div>
+			</a>
+			<a href="map.html">
+				<div id="map" class="navigator">MAP</div>
+			</a>
+			<a href="register.html">
+				<div id="register" class="navigator">REGISTER</div>
+			</a>
+			<a href="login.html">
+				<div id="login" class="navigator">LOGIN</div>
+			</a>
+		</nav>
 		
 		<div id="content">
 		
@@ -31,7 +33,7 @@
 		
 			<div id="infoSection">
 				<h1 id="barName">Browar Mariacki</h1>
-				<h3 id="barAdress">69 Mariacka St.</h3>
+				<h3 id="barAdress">21 Mariacka St.</h3>
 				<h3 id="barOpenHours">04:20 - 21:37</h3>
 				<h3 id="barRating">&#9733 &#9733 &#9733 &#9733 &#9734 4.3 (32 ratings)</h3>
 				<h3 id="barSocial"><a>Facebook link</a></h3>
@@ -60,16 +62,18 @@
 			
 				<h2>Comments</h2>
 				
-				<p>You must be logged in to write comments.</p>
+				<p>You must be logged in to write comments and rate.</p>
 				
 				<div class="commentBlock">
-					<h3>Your Username</h3>
-					<textarea type="text" placeholder="Write comment..."></textarea>
-					<input id="commentSend" type="button" value="Add comment"></input>
+					<form>
+						<h3>Your Username</h3>
+						<textarea type="text" placeholder="Write comment..."></textarea>
+						<button id="commentSend" type="submit" value="Add comment"></button>
+					</form>
 				</div>
 				
 				<div class="commentBlock">
-					<h3>BritishSinger - 24.10.2024</h3>
+					<h3>BritishSinger <span class="commentDate">24.10.2024</span> </h3>
 					<p>Never gonna give you up. Never gonna let you down.</p>
 				</div>
 				<div class="commentBlock">
