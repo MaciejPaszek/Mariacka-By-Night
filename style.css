@@ -43,10 +43,6 @@ body{
 	background-color:	rgb(255,255,255,50%);
 }
 
-map{
-	background-color:	rgb(255,255,255,50%);
-}
-
 #content{
 	clear:				left;
 	padding:			30pt;
@@ -57,10 +53,11 @@ map{
 	width:				auto;
 	height:				100%;
 	max-width:			50%;
+	max-height:			300px;
 	margin-left:		30pt;
 }
 
-#mapimg{
+#map{
 	width:				60%;
 	height:				auto;
 }
@@ -145,7 +142,7 @@ textarea{
 		padding:			30pt;
 	}	
 	
-	#mapimg{
+	#map{
 		width:				100%;
 	}
 }
