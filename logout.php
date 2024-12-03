@@ -1,5 +1,7 @@
 <?php
 	session_start();
+	session_unset();
+	session_destroy();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,10 +15,13 @@
 	<body>
 		<?php include "header.php" ?>
 		
-		<div id="content" style="text-align: center;">
-			<object id="map" type="image/svg+xml" data="Map.svg" alt="There should be a Map"></object>
+		<div id="content">
+			<h2>Logout</h2>
+			You are now logged out.
 		</div>
 		
 		<?php include "footer.php" ?>
-	</body>
-</html>
+		
+	</div>
+</body>
+</html>			

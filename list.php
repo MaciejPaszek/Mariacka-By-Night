@@ -1,5 +1,8 @@
+<?php
+	session_start();
+?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 	<head>
 		<meta charset="UTF-8"></meta>
 		<link rel="stylesheet" href="style.css">
@@ -8,28 +11,11 @@
 	</head>
 	
 	<body>
-		<p id="title">
-			Mariacka By Night	&trade;
-		</p>
-		
-		<nav>
-			<a href="index.php">
-				<div id="list" class="navigator">LIST</div>
-			</a>
-			<a href="map.php">
-				<div id="map" class="navigator">MAP</div>
-			</a>
-			<a href="register.php">
-				<div id="register" class="navigator">REGISTER</div>
-			</a>
-			<a href="login.php">
-				<div id="login" class="navigator">LOGIN</div>
-			</a>
-		</nav>
+		<?php include "header.php" ?>
 		
 		<div id="content">
 		
-			<img id="photo" src="img/Pepe Beer.png"></img>
+			<img id="logo" src="img/Pepe Beer.png"></img>
 		
 			<h2>Hello There!</h2>
 			<p>
@@ -55,7 +41,7 @@
 				We will answer as quickly as we want, so please be patient.
 			</p>
 			<p>
-				&emsp; <i><span class="brandName">Mariacka by Night &trade;</span> - getting drunk has never been so easy. </i>
+				&emsp; <i><span id="brandName">Mariacka by Night &trade;</span> - getting drunk has never been so easy. </i>
 			</p>
 			
 			<h2>Alphabetic order:</h2>
@@ -65,7 +51,7 @@
 					$servername = "localhost";
 					$username = "root";
 					$password = "";
-					$dbname = "MariackaByNight";
+					$dbname = "MariackaByNightDB";
 					
 					// Create connection
 					$conn = new mysqli($servername, $username, $password, $dbname);
@@ -74,7 +60,7 @@
 					  die("Connection failed: " . $conn->connect_error);
 					}
 
-					$sql = "SELECT * FROM MariackaByNight.bary ORDER BY nazwa";
+					$sql = "SELECT * FROM MariackaByNightDB.locations ORDER BY name";
 					$result = $conn->query($sql);
 
 					if ($result->num_rows > 0) {
@@ -84,14 +70,14 @@
 					  
 					  while($row = $result->fetch_assoc()) {
 						//echo "id: " . $row["id"]. " - Name: " . $row["nazwa"]. " " . $row["adres"]. "<br>";
-						$currentLetter = substr($row["nazwa"], 0, 1);
+						$currentLetter = substr($row["name"], 0, 1);
 						if($lastLetter != $currentLetter)
 						{	
 							echo '</ul><h3>' . $currentLetter . '</h3><ul>';
 							$lastLetter = $currentLetter;
 						}
 					
-						echo '<li><a href="bar.php?id=' . $row["id"] . '">' . $row["nazwa"] . '</a></li>';
+						echo '<li><a href="bar.php?id=' . $row["ID"] . '">' . $row["name"] . '</a></li>';
 					  }
 					} else {
 					  echo "0 results";
@@ -102,12 +88,9 @@
 			
 		</div>
 		
-		<footer>
-			<p>Authors: Section 321</p>
-			<p>A. A. Barczyk - <a href="mailto:ab306198@student.polsl.pl">ab306198@student.polsl.pl</a></p>
-			<p>M. R. Paszek -  <a href="mailto:mp306395@student.polsl.pl">mp306395@student.polsl.pl</a></p>
-		</footer>
-		
 	</div>
+	
+	<?php include "footer.php" ?>
+	
 </body>
 </html>

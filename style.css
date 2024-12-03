@@ -24,7 +24,7 @@ body{
 	margin:				0;
 }
 
-.brandName{
+#brandName{
 	font-family:		Times New Roman;
 	font-weight:		bold;
 	font-style:			italic;
@@ -50,10 +50,15 @@ body{
 
 #photo{
 	float:				right;
-	width:				auto;
-	height:				100%;
-	max-width:			50%;
-	max-height:			300px;
+	width:				50%;
+	height:				auto;
+	margin:				0pt 30pt 0pt 0pt;
+}
+
+#logo{
+	float:				right;
+	width:				30%;
+	height:				auto;
 	margin-left:		30pt;
 }
 
@@ -89,20 +94,13 @@ p{
 	text-align:			justify;
 }
 
-#barDesc{
-	text-align:			justify;
-}
-
-footer{
-	text-align:			center;
-	padding:			10pt;
-	margin-top:			30pt;
-}
-
 .comment{
 	background-color:	rgb(255,255,255,20%);
 	padding:			10pt 10pt 10pt 10pt;
 	margin: 			5pt 0pt 5pt 0pt;
+}
+
+.commentDate{
 }
 
 textarea{
@@ -119,30 +117,60 @@ textarea{
 	font-family:		Arial;
 	font-size:			16pt;
 	padding:			5pt;
-	
+}
+
+label{
+	font-family:		Arial;
+	font-size:			16pt;
+	padding:			5pt;
+}
+
+input{
+	font-family:		Arial;
+	font-size:			16pt;
+	padding:			5pt;
+}
+
+button{
+	font-family:		Arial;
+	font-size:			16pt;
+	padding:			5pt;
+}
+
+footer{
+	background-color:	rgb(255,255,255,20%);
+	text-align:			center;
+	padding:			10pt;
+	margin:				30pt;
 }
 
 @media screen and (max-width: 800px) {
 	.navigator{
-		width: 100%;
-		
+		width:			100%;
 	}
   
 	#photo{
-		clear: left;
-		float:				center;
-		width:				100%;
-		max-width:			100%;
-		max-height:			auto;
-		height: 			auto;
+		clear:			left;
+		float:			center;
+		width:			100%;
+		height: 		auto;
+		margin:			0pt 0pt 30pt 0pt;
+	}
+	
+	#logo{
+		clear:			left;
+		float:			center;
+		width:			100%;
+		height: 		auto;
+		margin:			0pt 0pt 30pt 0pt;
 	}
 	
 	#content{
-		clear:				left;
-		padding:			30pt;
+		clear:			left;
+		padding:		30pt;
 	}	
 	
 	#map{
-		width:				100%;
+		width:			100%;
 	}
 }
