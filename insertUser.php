@@ -1,17 +1,18 @@
 <?php
+	// Rozpocznij sesję
 	session_start();
+	include "dbconnect.php";
+	
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+	
 		<meta charset="UTF-8"></meta>
 		<link rel="stylesheet" href="style.css">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Mariacka By Night</title>
-		
-		<script>
-		
-		</script>
 		
 	</head>
 	
@@ -19,52 +20,71 @@
 		<?php include "header.php" ?>
 		
 		<div id="content">
-			<h2>Register</h2>
+			<h1>Register</h1>
 			
 			<?php
-				$servername = "localhost";
-				$username = "root";
-				$password = "";
-				$dbname = "MariackaByNightDB";
-
-				// Create connection
-				$conn = new mysqli($servername, $username, $password, $dbname);
-				// Check connection
-				if ($conn->connect_error) {
-				  die("Connection failed: " . $conn->connect_error);
+				
+				$formLogin = $conn->real_escape_string($_POST["formLogin"]);
+				$formPassword = $conn->real_escape_string($_POST["formPassword"]);
+				$formRepeatPassword = $conn->real_escape_string($_POST["formRepeatPassword"]);
+				
+				if ($formLogin == "")
+				{
+					echo "<p> Login cannot be empty. </p> </div>";
+					include "footer.php";
+					$conn->close();
+					die();
 				}
-
-				$formLogin = $conn->real_escape_string($_POST['formLogin']);
-				$formPassword = $conn->real_escape_string($_POST['formPassword']);
-				$formRepeatPassword = $conn->real_escape_string($_POST['formRepeatPassword']);
 				
 				if ($formPassword == "")
-					  die("Password cannot be empty.");
+				{
+					echo "<p> Password cannot be empty. </p> </div>";
+					include "footer.php";
+					$conn->close();
+					die();
+				}
+				
+				if(strlen($formPassword) < 8)
+				{
+					echo "<p> Password must be at least 8 characters long. </p> </div>";
+					include "footer.php";
+					$conn->close();
+					die();
+				}
 				
 				if ($formPassword != $formRepeatPassword)
-					  die("Inserted passwords don't match.");
+				{
+					echo "<p> Inserted passwords don't match. </p> </div>";
+					include "footer.php";
+					$conn->close();
+					die();
+				}
 				
-				$query = "SELECT * FROM MariackaByNightDB.users WHERE login ='{$formLogin}'";
+				
+				$query = "SELECT * FROM users WHERE login = '$formLogin'";
 				$result = $conn->query($query);
 
 				if ($result->num_rows > 0)
-					  die("User <b>$formLogin</b> already exists. Please use another login.");
+				{
+					echo "<p> User <b>$formLogin</b> already exists. Please use another login. </p> </div>";
+					include "footer.php";
+					$conn->close();
+					die();
+				}
 				
 				$hash = password_hash($formPassword, PASSWORD_BCRYPT);
 				
-				$query = "INSERT INTO MariackaByNightDB.users (login, password)
-							VALUES ('{$formLogin}','{$hash}')";
+				$query = "INSERT INTO users (login, password) VALUES ('$formLogin','$hash')";
 
 				$conn->query($query);
 				$conn->close();
 				
-				echo "You are now registered as <b>$formLogin</b>. Visit the <b>LOGIN</b> page to use your user privileges. And dont forget your password, because there is no retrive system yet.";
+				echo "<p> You are now registered as <b>$formLogin</b>. Visit the <a href='/login.php'><b>Login</b></a> page to use your new user privileges. And don't forget your password, because there is no retrive system yet. </p>";
 			?>
 		
 		</div>
 		
 		<?php include "footer.php" ?>
-		
-	</div>
-</body>
+
+	</body>
 </html>			

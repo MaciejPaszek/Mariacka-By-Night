@@ -44,45 +44,52 @@ body{
 }
 
 #content{
+	text-align:			center;
 	clear:				left;
 	padding:			30pt;
 }
 
 #photo{
 	float:				right;
-	width:				50%;
-	height:				auto;
+	width:				60%;
 	margin:				0pt 30pt 0pt 0pt;
 }
 
 #logo{
 	float:				right;
 	width:				30%;
+	max-width:			500px;
 	height:				auto;
 	margin-left:		30pt;
 }
 
 #map{
-	width:				60%;
+	width:				80%;
+	max-width:			1080px;
 	height:				auto;
-}
-
-#infoSection{
-	
 }
 
 #descriptionSection{
 	clear:				right;
 }
 
-#commentSection{
-	
-}
-
 .commentBlock{
 	background-color:	rgb(255,255,255,20%);
 	padding:			10pt;
 	margin: 			5pt 0pt 5pt 0pt;
+	text-align:			left;
+}
+
+h1{
+	text-align:			left;
+}
+
+h2{
+	text-align:			left;
+}
+
+h3{
+	text-align:			left;
 }
 
 a{
@@ -94,6 +101,10 @@ p{
 	text-align:			justify;
 }
 
+ul{
+	text-align:			left;
+}
+
 .comment{
 	background-color:	rgb(255,255,255,20%);
 	padding:			10pt 10pt 10pt 10pt;
@@ -101,22 +112,29 @@ p{
 }
 
 .commentDate{
+	font-size:			12pt;
+	font-weight:		normal;
+}
+
+.stars{
+	text-align:			left;
+}
+
+.center{
+	text-align:			center;
 }
 
 textarea{
 	background-color:	rgb(255,255,255,0%);
-	color:				white;
+	color:				rgb(255,255,255);
 	font-family:		Arial;
 	font-size:			16pt;
 	width:				100%;
 	padding:			5pt;
 	resize:				none;
-}
-
-#commentSend{
-	font-family:		Arial;
-	font-size:			16pt;
-	padding:			5pt;
+	border:				solid;
+	border-width:		2px;
+	border-color:		rgb(255,255,255);
 }
 
 label{
@@ -129,48 +147,116 @@ input{
 	font-family:		Arial;
 	font-size:			16pt;
 	padding:			5pt;
+	border:				solid;
+	border-width:		2px;
+	border-color:		rgb(255,255,255);
+	color:				rgb(255,255,255);
+	background-color:	rgb(255,255,255,20%);
 }
 
 button{
 	font-family:		Arial;
 	font-size:			16pt;
 	padding:			5pt;
+	border:				none;
+	color:				rgb(255,255,255);
+	background-color:	rgb(255,255,255,20%);
+}
+
+button:hover{
+	background-color:	rgb(255,255,255,50%);
+}
+
+#login{
+	margin:				30pt;
+}
+
+#register{
+	margin:				30pt;
 }
 
 footer{
 	background-color:	rgb(255,255,255,20%);
 	text-align:			center;
-	padding:			10pt;
+	padding:			10pt 10pt 30pt 10pt;
 	margin:				30pt;
 }
 
 @media screen and (max-width: 800px) {
+	
+	body{
+		font-size:			12pt;
+		background-color:	rgb(0,0,50);
+		color:				rgb(255,255,255);
+		margin:				0;
+		text-align:			center;
+	}
+	
+	#title{
+		font-size:			25pt;
+		padding:			10pt 0pt 10pt 0pt;
+	}
+	
 	.navigator{
 		width:			100%;
+		padding:		10pt 0pt 10pt 0pt;
 	}
+  
+	#content{
+		clear:			left;
+		padding:		10pt;
+	}	
   
 	#photo{
 		clear:			left;
 		float:			center;
 		width:			100%;
-		height: 		auto;
 		margin:			0pt 0pt 30pt 0pt;
 	}
 	
 	#logo{
-		clear:			left;
-		float:			center;
-		width:			100%;
-		height: 		auto;
-		margin:			0pt 0pt 30pt 0pt;
+		float:			none;
+		width:			75%;
+		margin-left: auto;
+		margin-right: auto;
 	}
-	
-	#content{
-		clear:			left;
-		padding:		30pt;
-	}	
 	
 	#map{
 		width:			100%;
+	}
+	
+	
+	p{
+		font-size:			12pt;
+	}
+	
+	textarea{
+		background-color:	rgb(255,255,255,0%);
+		color:				white;
+		font-size:			12pt;
+	}
+	
+	label{
+		font-size:			12pt;
+	}
+	
+	input{
+		font-size:			12pt;
+	}
+	
+	button{
+		font-size:			12pt;
+	}
+	
+	footer{
+		margin:				10pt;
+	}
+
+	.stars{
+		text-align:			center;
+	}
+	
+	.commentDate{
+		font-size:			8pt;
 	}
 }

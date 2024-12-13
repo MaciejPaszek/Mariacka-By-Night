@@ -3,7 +3,7 @@
 </p>
 		
 <nav>
-	<a href="list.php">
+	<a href="index.php">
 		<div class="navigator">LIST</div>
 	</a>
 	
@@ -14,22 +14,23 @@
 	<?php
 		if(isset($_SESSION["userID"]))
 		{
-			echo	'<div class="navigator">'.$_SESSION["userLogin"].'  </div>
-					
-					<a href="logout.php">
-						<div class="navigator">LOGOUT</div>
-					</a>';
+			echo		"<a href='user.php'>";
+			echo			"<div class='navigator'>$_SESSION[userLogin]</div>";
+			echo		"</a>";
+			
+			echo		"<a href='logout.php'>";
+			echo			"<div class='navigator'>LOGOUT</div>";
+			echo		"</a>";
 			}
 		else
 		{
-			echo	'<a href="register.php">
-						<div class="navigator">REGISTER</div>
-					</a>
-			
-					<a href="login.php">
-						<div class="navigator">LOGIN</div>
-					</a>';
+			echo	"<a href='register.php'>";
+			echo			"<div class='navigator'>REGISTER</div>";
+			echo		"</a>";
+
+			echo		"<a href='login.php'>";
+			echo			"<div class='navigator'>LOGIN</div>";
+			echo		"</a>";
 		}
 	?>
-
 </nav>
